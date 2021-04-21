@@ -5,7 +5,7 @@ on:
 
 jobs:
   unit_tests:
-    runs_on: [ubuntu-latest]
+    runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
 
@@ -13,7 +13,7 @@ jobs:
         run: ./gradlw test
 
   android_test:
-    runs_on: [macos-latest]
+    runs-on: [macos-latest]
     steps:
       - uses: actions/checkout@v2
 
