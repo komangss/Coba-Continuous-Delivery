@@ -1,0 +1,24 @@
+name: Test and Deploy
+
+on:
+  push:
+
+jobs:
+  unit_tests:
+    runs_on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Unit Tests
+        run: ./gradlw test
+
+  android_test:
+    runs_on: [macos-latest]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Instrumentation Tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew connectedAndroidTest
