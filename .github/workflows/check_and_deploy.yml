@@ -9,6 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Unit Tests
         run: ./gradlw test
 
@@ -16,6 +19,9 @@ jobs:
     runs-on: [macos-latest]
     steps:
       - uses: actions/checkout@v2
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
 
       - name: Instrumentation Tests
         uses: reactivecircus/android-emulator-runner@v2
