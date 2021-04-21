@@ -13,7 +13,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Unit Tests
-        run: ./gradlw test
+        run: ./gradlew test
 
   android_test:
     runs-on: [macos-latest]
